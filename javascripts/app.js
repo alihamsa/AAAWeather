@@ -12,9 +12,17 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap"], function($, Handlebars, bootstrap) {
+    ["jquery", "hbs", "bootstrap", "openWeather"], function($, Handlebars, bootstrap, openWeather) {
 
     //Declare variable for firebase reference
     var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
+
+    var foo = function(x){
+        y = $.parseJSON(x);
+        console.log(y);
+    };
+
+    openWeather.callAPI('37212', foo);
+>>>>>>> daf03ec57ceb3a7d34d3f215a440846b2c5616d2
 
     });
