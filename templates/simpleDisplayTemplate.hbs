@@ -1,0 +1,64 @@
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#threeDay" aria-controls="threeDay" role="tab" data-toggle="tab">3 Day Forecast</a></li>
+    <li role="presentation"><a href="#sevenDay" aria-controls="sevenDay" role="tab" data-toggle="tab">7 Day Forecast</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <h4>
+        Weather at {{this.city.name}}
+      </h4>
+      <p>Current Temperature: {{this.list.0.temp.day}}</p>
+      <p>Max Temp: {{this.list.0.temp.max}}</p>
+      <p>Min Temp: {{this.list.0.temp.min}}</p>
+      <h5>{{this.list.0.weather.0.description}}</h5>
+      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
+      <p>Wind: {{this.list.0.speed}} mph</p>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="threeDay">
+      <h4>
+        3 Day Weather Forecast for {{this.city.name}}
+      </h4>
+      <p>Temperature: {{this.list.0.temp.day}}</p>
+      <p>Max Temp: {{this.list.0.temp.max}}</p>
+      <p>Min Temp: {{this.list.0.temp.min}}</p>
+      <h5>{{this.list.0.weather.0.description}}</h5>
+      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
+      <p>Wind: {{this.list.0.speed}} mph</p>
+      <p>Temperature: {{this.list.1.temp.day}}</p>
+      <p>Max Temp: {{this.list.1.temp.max}}</p>
+      <p>Min Temp: {{this.list.1.temp.min}}</p>
+      <h5>{{this.list.1.weather.0.description}}</h5>
+      <img src="http://openweathermap.org/img/w/{{this.list.1.weather.0.icon}}.png" alt="weather icon">
+      <p>Wind: {{this.list.2.speed}} mph</p>
+      <p>Temperature: {{this.list.2.temp.day}}</p>
+      <p>Max Temp: {{this.list.2.temp.max}}</p>
+      <p>Min Temp: {{this.list.2.temp.min}}</p>
+      <h5>{{this.list.2.weather.0.description}}</h5>
+      <img src="http://openweathermap.org/img/w/{{this.list.2.weather.0.icon}}.png" alt="weather icon">
+      <p>Wind: {{this.list.2.speed}} mph</p>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="sevenDay">
+      <h4>
+        7 Day Forecast for {{this.city.name}}
+      </h4>
+      {{#each this.list}}
+      <p>Temperature: {{this.temp.day}}</p>
+      <p>Max Temp: {{this.temp.max}}</p>
+      <p>Min Temp: {{this.temp.min}}</p>
+      <h5>{{this.weather.0.description}}</h5>
+      <img src="http://openweathermap.org/img/w/{{this.weather.0.icon}}.png" alt="weather icon">
+      <p>Wind: {{this.speed}} mph</p>
+      {{/each}}
+    </div>
+  </div>
+
+</div>
