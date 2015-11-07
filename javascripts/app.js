@@ -12,7 +12,7 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap", "openWeather"], function($, Handlebars, bootstrap, openWeather) {
+    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy"], function($, Handlebars, bootstrap, openWeather, searchBy) {
 
     //Declare variable for firebase reference
     var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
@@ -23,6 +23,28 @@ requirejs(
     };
 
     openWeather.callAPI('37212', foo);
->>>>>>> daf03ec57ceb3a7d34d3f215a440846b2c5616d2
+
+    $(document).on('click','#search',function(e){
+        e.preventDefault();
+        zipInput = $('#zipSearch').val();
+        cityInput = $('#citySearch').val();
+
+        if (zipInput.length > 0){
+            searchBy.zip(foo);
+        } else if (cityInput.length > 0) {
+            searchBy.city(foo);
+        } else {
+            alert('Please input either Zip Code or City Name');
+        }
+
+    })
+
+    $(document).on('click','#reset',function(e){
+        e.preventDefault();
+        $('#zipSearch').val("");
+        $('#citySearch').val("");
+
+    })
+
 
     });
