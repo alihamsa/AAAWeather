@@ -12,8 +12,13 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap"], function($, Handlebars, bootstrap) {
+    ["jquery", "hbs", "bootstrap", "openWeather"], function($, Handlebars, bootstrap, openWeather) {
 
+    var foo = function(x){
+        y = $.parseJSON(x);
+        console.log(y);
+    };
 
+    openWeather.callAPI('37212', foo);
 
     });
