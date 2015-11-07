@@ -14,6 +14,7 @@ requirejs.config({
 requirejs(
     ["jquery", "hbs", "bootstrap"], function($, Handlebars, bootstrap) {
 
-
+    //Declare variable for firebase reference
+    var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
 
     });
