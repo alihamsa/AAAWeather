@@ -12,7 +12,7 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy"], function($, Handlebars, bootstrap, openWeather, searchBy) {
+    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy", "simpleDisplay"], function($, Handlebars, bootstrap, openWeather, searchBy, simpleDisplay) {
 
     //Declare variable for firebase reference
     var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
@@ -20,6 +20,7 @@ requirejs(
     var foo = function(x){
         y = $.parseJSON(x);
         console.log(y);
+        simpleDisplay.simpleDisplay(y);
     };
 
     openWeather.callAPI('37212', foo);
@@ -45,6 +46,5 @@ requirejs(
         $('#citySearch').val("");
 
     })
-
 
     });
