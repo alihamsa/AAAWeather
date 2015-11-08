@@ -21,6 +21,8 @@ define(function(require) {
           console.log("Error creating user:", error);
         } else {
           alert("Successfully created user account.");
+          $('#myModal').modal('hide');
+
         } //end else
 
       }); //end creatUser

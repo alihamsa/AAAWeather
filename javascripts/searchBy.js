@@ -11,6 +11,7 @@ return {
    			return /^\d{5}(-\d{4})?$/.test(zipCode);
 			};
 
+			//check if it's a valid zip code and call an Ajax call to the API
 			if (isValidUSZip(zip)) {
 
 				searchTerms = "zip=";

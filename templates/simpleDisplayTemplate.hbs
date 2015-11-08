@@ -14,11 +14,12 @@
       <h4>
         Weather at {{this.city.name}}
       </h4>
+      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
+      <p>Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
       <p>Current Temperature: {{this.list.0.temp.day}}</p>
       <p>Max Temp: {{this.list.0.temp.max}}</p>
       <p>Min Temp: {{this.list.0.temp.min}}</p>
       <h5>{{this.list.0.weather.0.description}}</h5>
-      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
       <p>Wind: {{this.list.0.speed}} mph</p>
     </div>
 
@@ -26,23 +27,28 @@
       <h4>
         3 Day Weather Forecast for {{this.city.name}}
       </h4>
+      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
+      <p>Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
       <p>Temperature: {{this.list.0.temp.day}}</p>
       <p>Max Temp: {{this.list.0.temp.max}}</p>
       <p>Min Temp: {{this.list.0.temp.min}}</p>
       <h5>{{this.list.0.weather.0.description}}</h5>
-      <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
       <p>Wind: {{this.list.0.speed}} mph</p>
+
+      <img src="http://openweathermap.org/img/w/{{this.list.1.weather.0.icon}}.png" alt="weather icon">
+      <p>Date: <span class="timeStamp" value="{{this.list.1.dt}}"></span></p>
       <p>Temperature: {{this.list.1.temp.day}}</p>
       <p>Max Temp: {{this.list.1.temp.max}}</p>
       <p>Min Temp: {{this.list.1.temp.min}}</p>
       <h5>{{this.list.1.weather.0.description}}</h5>
-      <img src="http://openweathermap.org/img/w/{{this.list.1.weather.0.icon}}.png" alt="weather icon">
       <p>Wind: {{this.list.2.speed}} mph</p>
+
+      <img src="http://openweathermap.org/img/w/{{this.list.2.weather.0.icon}}.png" alt="weather icon">
+      <p>Date: <span class="timeStamp" value="{{this.list.2.dt}}"></span></p>
       <p>Temperature: {{this.list.2.temp.day}}</p>
       <p>Max Temp: {{this.list.2.temp.max}}</p>
       <p>Min Temp: {{this.list.2.temp.min}}</p>
       <h5>{{this.list.2.weather.0.description}}</h5>
-      <img src="http://openweathermap.org/img/w/{{this.list.2.weather.0.icon}}.png" alt="weather icon">
       <p>Wind: {{this.list.2.speed}} mph</p>
     </div>
 
@@ -51,11 +57,12 @@
         7 Day Forecast for {{this.city.name}}
       </h4>
       {{#each this.list}}
+      <img src="http://openweathermap.org/img/w/{{this.weather.0.icon}}.png" alt="weather icon">
+      <p>Date: <span class="timeStamp" value="{{this.dt}}"></span></p>
       <p>Temperature: {{this.temp.day}}</p>
       <p>Max Temp: {{this.temp.max}}</p>
       <p>Min Temp: {{this.temp.min}}</p>
       <h5>{{this.weather.0.description}}</h5>
-      <img src="http://openweathermap.org/img/w/{{this.weather.0.icon}}.png" alt="weather icon">
       <p>Wind: {{this.speed}} mph</p>
       {{/each}}
     </div>

@@ -12,12 +12,13 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy", "simpleDisplay", "register"], function($, Handlebars, bootstrap, openWeather, searchBy, simpleDisplay, register) {
+    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy", "simpleDisplay", "register", "logIn"], function($, Handlebars, bootstrap, openWeather, searchBy, simpleDisplay, register, logIn) {
 
     //Declare variable for firebase reference
     var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
 
-
+    //hide the search form until log in is completed
+    $("#searchForm").hide();
 
     //callback function that fixes a parse error and then calls the display function
     var foo = function(x){
@@ -55,7 +56,11 @@ requirejs(
         e.preventDefault();
         register.newUser();
     });
-
+    //event handler for log In
+    $(document).on('click','#signinButton',function(e){
+        e.preventDefault();
+        logIn.userLogIn();
+    });
 
 
     });
