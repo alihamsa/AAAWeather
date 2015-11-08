@@ -18,5 +18,5 @@ return {
 		    callback(data);
 		  });
 		}
-	} //end return
+	}; //end return
 }); //end define

@@ -9,7 +9,7 @@ return {
 
 			var isValidUSZip = function(zipCode) {
    			return /^\d{5}(-\d{4})?$/.test(zipCode);
-			}
+			};
 
 			if (isValidUSZip(zip)) {
 
@@ -36,5 +36,5 @@ return {
 
 
 		} //end city
-	} //end return
+	}; //end return
 }); //end define

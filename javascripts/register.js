@@ -5,8 +5,8 @@ define(function(require) {
 
       newUser: function() {
 
-      var newUserEmail     = $("#emailRegister").val();
-      var newUserPassword  = $("#passwordRegisterCheck").val();
+      var newUserEmail     = $("#registerEmail").val();
+      var newUserPassword  = $("#reenterPassword").val();
 
       console.log(newUserEmail);
       console.log(newUserPassword);
@@ -21,23 +21,9 @@ define(function(require) {
           console.log("Error creating user:", error);
         } else {
           alert("Successfully created user account.");
-
-
-         require(['hbs!../templates/logIn'], function(Temp) {
-          $("#centerDiv").html(Temp());
-
-          $(document).on('click', '#submitLogIn', function(e){
-              e.preventDefault();
-              user.logIn();
-          }); //end event handler
-
-        }); //end logIn Form populate require
-
         } //end else
 
-      } //End userData fxn
-
-    ); //end creatUser
+      }); //end creatUser
 
     } //End newUser
 

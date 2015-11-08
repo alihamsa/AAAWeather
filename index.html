@@ -10,7 +10,7 @@
 <body background="https://d3rnbxvnd0hlox.cloudfront.net/images/channels/7/icons/large.png">
 <!-- Button trigger modal -->
 
-<div class="container">
+<div class="container" id="authorize">
     <hr class="prettyline">
     <br>
     <center>
@@ -73,7 +73,7 @@
             <div class="control-group">
               <label class="control-label" for="Email">Email:</label>
               <div class="controls">
-                <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                <input id="registerEmail" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
               </div>
             </div>
 
@@ -81,7 +81,7 @@
             <div class="control-group">
               <label class="control-label" for="userid">Username:</label>
               <div class="controls">
-                <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                <input id="userId" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
               </div>
             </div>
 
@@ -98,7 +98,7 @@
             <div class="control-group">
               <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
               <div class="controls">
-                <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                <input id="reenterPassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
               </div>
             </div>
 
@@ -124,7 +124,7 @@
 </div>
 
 
-
+<!-- Form to search for weather Data -->
 <form class="form-horizontal" id="searchForm">
   <div class="form-group">
     <label for="zipSearch" class="col-sm-2 control-label">Zip Code</label>
@@ -147,7 +147,7 @@
     </div>
   </div>
 </form>
-
+<!-- Blank output div to be populated by handlebars -->
   <div class="container" id="output">
 
   </div>
