@@ -1,0 +1,13 @@
+<h4>
+  My Saved Weather
+</h4>
+{{#each this}}
+<p>{{this.name}}</p>
+<img src="http://openweathermap.org/img/w/{{this.data.weather.0.icon}}.png" alt="weather icon">
+<p class="inlineBlock">Date: <span class="timeStamp" value="{{this.data.dt}}"></span></p>
+<p>Temperature: {{this.data.temp.day}}</p>
+<p>Max Temp: {{this.data.temp.max}}</p>
+<p>Min Temp: {{this.data.temp.min}}</p>
+<h5>{{this.data.weather.0.description}}</h5>
+<p>Wind: {{this.data.speed}} mph</p>
+{{/each}}

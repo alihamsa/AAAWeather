@@ -12,10 +12,13 @@ requirejs.config({
 });
 
 requirejs(
-    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy", "simpleDisplay", "register", "logIn"], function($, Handlebars, bootstrap, openWeather, searchBy, simpleDisplay, register, logIn) {
+    ["jquery", "hbs", "bootstrap", "openWeather", "searchBy", "simpleDisplay", "register", "logIn","userWeather"], function($, Handlebars, bootstrap, openWeather, searchBy, simpleDisplay, register, logIn, userWeather) {
 
     //Declare variable for firebase reference
     var firebaseRef = new Firebase("https://movie-viewer.firebaseio.com/");
+
+    //Making parsed object global
+    var currentWeatherObject;
 
     //hide the search form until log in is completed
     $("#searchForm").hide();
@@ -23,6 +26,7 @@ requirejs(
     //callback function that fixes a parse error and then calls the display function
     var foo = function(x){
         y = $.parseJSON(x);
+        currentWeatherObject = y;
         console.log(y);
         simpleDisplay.simpleDisplay(y);
     };
@@ -61,6 +65,20 @@ requirejs(
         e.preventDefault();
         logIn.userLogIn();
     });
+
+ //event handler for log In
+    $(document).on('click','button.inlineBlock',function(e){
+        e.preventDefault();
+
+        // var index = $(this).children('span')[0].attr('value');
+        var mySpan = $(this).children('span')[0];
+        var index = $(mySpan).attr('value');
+        // console.log(index);
+        userWeather.save(currentWeatherObject, index);
+
+        $(this).hide();
+    });
+
 
 
     });

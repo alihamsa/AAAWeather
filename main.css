@@ -5,4 +5,8 @@
   border-radius: 10px;
   }
 
+.inlineBlock {
+  display :inline-block;
+}
+
 /* Color line credit to ninjamonk: [[http://bootsnipp.com/snippets/featured/mix-amp-match-login]]*/*/

@@ -5,17 +5,21 @@
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
     <li role="presentation"><a href="#threeDay" aria-controls="threeDay" role="tab" data-toggle="tab">3 Day Forecast</a></li>
     <li role="presentation"><a href="#sevenDay" aria-controls="sevenDay" role="tab" data-toggle="tab">7 Day Forecast</a></li>
+    <li role="presentation"><a href="#saved" aria-controls="saved" role="tab" data-toggle="tab">My Saved Forecasts</a></li>
   </ul>
 
   <!-- Tab panes -->
-  <div class="tab-content">
+  <div class="tab-content col-md-5 col-md-offset-3">
 
     <div role="tabpanel" class="tab-pane active" id="home">
       <h4>
         Weather at {{this.city.name}}
       </h4>
       <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
-      <p>Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
+      <p class="inlineBlock">Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
+      <button class="inlineBlock" type="button">
+        <span value="0" class="glyphicon glyphicon-plus"></span>
+      </button>
       <p>Current Temperature: {{this.list.0.temp.day}}</p>
       <p>Max Temp: {{this.list.0.temp.max}}</p>
       <p>Min Temp: {{this.list.0.temp.min}}</p>
@@ -28,7 +32,10 @@
         3 Day Weather Forecast for {{this.city.name}}
       </h4>
       <img src="http://openweathermap.org/img/w/{{this.list.0.weather.0.icon}}.png" alt="weather icon">
-      <p>Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
+      <p class="inlineBlock">Date: <span class="timeStamp" value="{{this.list.0.dt}}"></span></p>
+      <button class="inlineBlock" type="button">
+        <span value="0" class="glyphicon glyphicon-plus"></span>
+      </button>
       <p>Temperature: {{this.list.0.temp.day}}</p>
       <p>Max Temp: {{this.list.0.temp.max}}</p>
       <p>Min Temp: {{this.list.0.temp.min}}</p>
@@ -36,7 +43,10 @@
       <p>Wind: {{this.list.0.speed}} mph</p>
 
       <img src="http://openweathermap.org/img/w/{{this.list.1.weather.0.icon}}.png" alt="weather icon">
-      <p>Date: <span class="timeStamp" value="{{this.list.1.dt}}"></span></p>
+      <p class="inlineBlock">Date: <span class="timeStamp" value="{{this.list.1.dt}}"></span></p>
+      <button class="inlineBlock" type="button">
+        <span value="1" class="glyphicon glyphicon-plus"></span>
+      </button>
       <p>Temperature: {{this.list.1.temp.day}}</p>
       <p>Max Temp: {{this.list.1.temp.max}}</p>
       <p>Min Temp: {{this.list.1.temp.min}}</p>
@@ -44,7 +54,10 @@
       <p>Wind: {{this.list.2.speed}} mph</p>
 
       <img src="http://openweathermap.org/img/w/{{this.list.2.weather.0.icon}}.png" alt="weather icon">
-      <p>Date: <span class="timeStamp" value="{{this.list.2.dt}}"></span></p>
+      <p class="inlineBlock">Date: <span class="timeStamp" value="{{this.list.2.dt}}"></span></p>
+      <button class="inlineBlock" type="button">
+        <span value="2" class="glyphicon glyphicon-plus"></span>
+      </button>
       <p>Temperature: {{this.list.2.temp.day}}</p>
       <p>Max Temp: {{this.list.2.temp.max}}</p>
       <p>Min Temp: {{this.list.2.temp.min}}</p>
@@ -58,7 +71,10 @@
       </h4>
       {{#each this.list}}
       <img src="http://openweathermap.org/img/w/{{this.weather.0.icon}}.png" alt="weather icon">
-      <p>Date: <span class="timeStamp" value="{{this.dt}}"></span></p>
+      <p class="inlineBlock">Date: <span class="timeStamp" value="{{this.dt}}"></span></p>
+      <button class="inlineBlock" type="button">
+        <span value="{{@index}}" class="glyphicon glyphicon-plus"></span>
+      </button>
       <p>Temperature: {{this.temp.day}}</p>
       <p>Max Temp: {{this.temp.max}}</p>
       <p>Min Temp: {{this.temp.min}}</p>
@@ -66,6 +82,10 @@
       <p>Wind: {{this.speed}} mph</p>
       {{/each}}
     </div>
-  </div>
 
+    <div role="tabpanel" class="tab-pane" id="saved">
+      <p>!!!!!!!!!!</p>
+    </div>
+
+  </div>
 </div>
