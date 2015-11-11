@@ -1,4 +1,5 @@
-#AAA Wather
+#AAA Weather
+(Ali, Alex, Allen)
 ## A student app for NSS 
 
 This is a student project to practice interacting with APIs.
