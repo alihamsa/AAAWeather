@@ -7,7 +7,7 @@ We've created a basic Javascipt app that displays weather data based on city or 
 The project uses the OpenWeatherMap API and Firebase.
 
 ###Installation Instructions
-This project is not hosted anywhere, so if you'd like to check it our plase clone the repo and run a local server.
+This project is not hosted anywhere, so if you'd like to check it our please clone the repo and run a local server.
 We're using node's http-server.
 **Note: You will need to run npm install and bower installs via the command line in the lib folder in order to install app dependencies locally**
 Check it out and let us know what you think.
